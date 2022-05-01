@@ -24,7 +24,7 @@ public class PressurePlate : MonoBehaviour
   {
     if (otherCollider.gameObject.tag == "Player")
     {
-      gameObject.transform.Translate(0f, -0.025f, 0f);
+      gameObject.transform.Translate(0f, -0.010f, 0f);
       this.energy.ToggleState();
     }
 
@@ -33,7 +33,7 @@ public class PressurePlate : MonoBehaviour
   {
     if (otherCollider.gameObject.tag == "Player")
     {
-      gameObject.transform.Translate(0f, +0.025f, 0f);
+      gameObject.transform.Translate(0f, +0.010f, 0f);
       this.energy.ToggleState();
     }
 
