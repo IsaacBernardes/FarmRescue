@@ -7,6 +7,8 @@ public class PressurePlate : MonoBehaviour
 {
   private BoxCollider2D colider;
   private EnergySource energy;
+  private int colliders = 0;
+
   // Start is called before the first frame update
   void Start()
   {
@@ -17,24 +19,34 @@ public class PressurePlate : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-
+    if (this.colliders > 0) {
+      this.energy.state = true;
+    } else {
+      this.energy.state = false;
+    }
   }
 
   private void OnTriggerEnter2D(Collider2D otherCollider)
   {
     if (otherCollider.gameObject.tag == "Player")
     {
-      gameObject.transform.Translate(0f, -0.010f, 0f);
-      this.energy.ToggleState();
+      if (this.colliders == 0) {
+        gameObject.transform.Translate(0f, -0.010f, 0f);
+      }
+
+      this.colliders += 1;
     }
 
   }
   private void OnTriggerExit2D(Collider2D otherCollider)
   {
+
     if (otherCollider.gameObject.tag == "Player")
     {
-      gameObject.transform.Translate(0f, +0.010f, 0f);
-      this.energy.ToggleState();
+      if (this.colliders == 1) {
+        gameObject.transform.Translate(0f, +0.010f, 0f);
+      }
+      this.colliders -= 1;
     }
 
   }
