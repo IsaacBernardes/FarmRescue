@@ -25,23 +25,22 @@ public class Levers : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D otherCollider)
   {
-    if (otherCollider.gameObject.tag == "Player")
+    if (otherCollider.gameObject.tag == "Player" && status == false)
     {
       status = true;
       anim.SetBool("leversAnim", false);
       this.energy.ToggleState();
     }
-  }
 
-   private void OnTriggerExit2D(Collider2D otherCollider)
-  {
-    if (otherCollider.gameObject.tag == "Player")
+    else if (otherCollider.gameObject.tag == "Player" && status == true)
     {
       status = false;
       anim.SetBool("leversAnim", true);
       this.energy.ToggleState();
     }
-
+    
   }
+
+   
     
 }
