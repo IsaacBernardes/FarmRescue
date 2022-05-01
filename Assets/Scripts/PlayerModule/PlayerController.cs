@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
+    public bool disableMovimentX = false;
     public float playerSpeed = 0.8f;
     public string leftKey = "a";
     public string rightKey = "d";
@@ -77,7 +78,13 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+        
+        float xSpeed = this.realSpeed;
+        if (disableMovimentX) {
+            xSpeed = this.rig.velocity.x;
+        }
 
-        this.rig.velocity = new Vector3(this.realSpeed, this.rig.velocity.y, 0f);
+
+        this.rig.velocity = new Vector3(xSpeed, this.rig.velocity.y, 0f);
     }
 }
