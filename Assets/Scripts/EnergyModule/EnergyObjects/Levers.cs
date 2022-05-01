@@ -2,18 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//[RequireComponent(typeof(EnergySource))]
+[RequireComponent(typeof(EnergySource))]
 public class Levers : MonoBehaviour
 {
+    private bool status = false;
     private Animator anim;
     private BoxCollider2D colider;
-    //private EnergySource energy;
+    private EnergySource energy;
     // Start is called before the first frame update
     void Start()
     {
         this.anim = gameObject.GetComponent<Animator>();
         this.colider = gameObject.GetComponent<BoxCollider2D>();
-       // this.energy = gameObject.GetComponent<EnergySource>();
+        this.energy = gameObject.GetComponent<EnergySource>();
     }
 
     // Update is called once per frame
@@ -26,8 +27,9 @@ public class Levers : MonoBehaviour
   {
     if (otherCollider.gameObject.tag == "Player")
     {
+      status = true;
       anim.SetBool("leversAnim", false);
-      //this.energy.ToggleState();
+      this.energy.ToggleState();
     }
   }
 
@@ -35,7 +37,9 @@ public class Levers : MonoBehaviour
   {
     if (otherCollider.gameObject.tag == "Player")
     {
+      status = false;
       anim.SetBool("leversAnim", true);
+      this.energy.ToggleState();
     }
 
   }
