@@ -107,9 +107,9 @@ TextureImporter:
       name: On (24x8)_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 24
+        width: 23
         height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,9 +128,9 @@ TextureImporter:
       name: On (24x8)_1
       rect:
         serializedVersion: 2
-        x: 24
+        x: 29
         y: 0
-        width: 24
+        width: 15
         height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -149,9 +149,9 @@ TextureImporter:
       name: On (24x8)_2
       rect:
         serializedVersion: 2
-        x: 48
+        x: 57
         y: 0
-        width: 24
+        width: 7
         height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -170,9 +170,9 @@ TextureImporter:
       name: On (24x8)_3
       rect:
         serializedVersion: 2
-        x: 72
+        x: 77
         y: 0
-        width: 24
+        width: 15
         height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
