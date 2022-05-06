@@ -40,10 +40,8 @@ public class PlayerController : MonoBehaviour
             this.realSpeed += this.playerSpeed;
         }
         if (Input.GetKeyDown(this.jumpKey) && this.jumps > 0) {
+            this.rig.velocity = new Vector3(this.rig.velocity.x, 0f, 0f);
             this.jumps -= 1;
-            if (this.jumps == 0 && this.hasDoubleJump) {
-                this.rig.velocity = new Vector3(this.rig.velocity.x, 0f, 0f);
-            }
             this.rig.AddForce(transform.up * 1.5f, ForceMode2D.Impulse);
         }
 
