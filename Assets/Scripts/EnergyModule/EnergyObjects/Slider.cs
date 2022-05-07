@@ -8,7 +8,8 @@ public class Slider : MonoBehaviour, EnergyPoint
     public Direction slideDirection = Direction.HORIZONTAL;
     public float smooth = 2f;
     public bool loadInverter = false;
-    public EnergySource energySource;
+    public EnergySource energySource1;
+    public EnergySource energySource2;
     private bool actualState;
     private Vector3 newPosition;
 
@@ -19,7 +20,17 @@ public class Slider : MonoBehaviour, EnergyPoint
 
     private void Update() {
         
-        bool state = energySource.state;
+      if(energySource1.state){
+            energy1();
+      }else{
+          energy2();
+      }
+
+    }
+
+    public void energy1() {
+        
+        bool state = energySource1.state;
 
         if (loadInverter) {
             state = !state;
@@ -40,6 +51,31 @@ public class Slider : MonoBehaviour, EnergyPoint
         }
 
     }
+
+    public void energy2() {
+        
+        bool state = energySource2.state;
+
+        if (loadInverter) {
+            state = !state;
+        }
+
+        if (actualState != state) {
+            this.actualState = state;
+
+            if (actualState) {
+                this.SwitchOn();
+            } else {
+                this.SwitchOff();
+            }
+        }
+
+        if (this.newPosition != null) {
+            transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * this.smooth);
+        }
+
+    }
+
 
     public void SwitchOn(){
            

@@ -5698,11 +5698,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3878450318930516469, guid: 866ffdca815150e4e86eab116b172668, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.1
+      value: 1.08
       objectReference: {fileID: 0}
     - target: {fileID: 3878450318930516469, guid: 866ffdca815150e4e86eab116b172668, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.96
+      value: -1.65
       objectReference: {fileID: 0}
     - target: {fileID: 3878450318930516469, guid: 866ffdca815150e4e86eab116b172668, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5839,6 +5839,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1858971, y: 0.07164502}
   m_EdgeRadius: 0
+--- !u!114 &1040354710 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8926137007630523220, guid: d747b6b2d84b0d643a493745bbce0c55, type: 3}
+  m_PrefabInstance: {fileID: 1702939754}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040354707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee3feb70cd00d64429be8489221d8dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1054931042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1146232348932463832, guid: 999f67fe373bf914c8020919ff5a8dd4, type: 3}
@@ -5879,7 +5890,8 @@ MonoBehaviour:
   slideDirection: 1
   smooth: 4
   loadInverter: 0
-  energySource: {fileID: 2081095243}
+  energySource1: {fileID: 2081095243}
+  energySource2: {fileID: 1040354710}
 --- !u!212 &1183358726
 SpriteRenderer:
   m_ObjectHideFlags: 0
