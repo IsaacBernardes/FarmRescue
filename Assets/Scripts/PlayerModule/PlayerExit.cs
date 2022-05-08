@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
@@ -22,6 +24,7 @@ public class PlayerExit : MonoBehaviour
             while (this.players.Count > 0) {
                 GameObject player = this.players[0];
                 Destroy(player);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1, LoadSceneMode.Single);
             }
         }
 
