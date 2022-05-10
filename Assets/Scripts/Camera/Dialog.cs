@@ -7,6 +7,15 @@ public class Dialog : MonoBehaviour
 {
     public GameObject canvasObject;
     public TextMeshProUGUI textField;
+    private AudioSettings audioSettings;
+
+    private void Start() {
+        GameObject go = GameObject.Find("GameSettings");
+
+        if (go != null) {
+            this.audioSettings = go.GetComponent<AudioSettings>();
+        }
+    }
 
     public void ClearText() {
         this.textField.text = "";
@@ -22,5 +31,9 @@ public class Dialog : MonoBehaviour
 
     public void DisableDialog() {
         this.canvasObject.SetActive(false);
+    }
+
+    public void PlaySound(string sound) {
+        this.audioSettings.PlaySound(sound);
     }
 }
