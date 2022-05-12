@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private SpriteRenderer sprite;
     private int jumps = 1;
+    private float reloadJump = 0.12f;
 
     private void Start() {
         this.rig = gameObject.GetComponent<Rigidbody2D>();
@@ -68,13 +69,20 @@ public class PlayerController : MonoBehaviour
             this.sprite.flipX = false;
         }
 
-        if (this.rig.velocity.y == 0f) {
-            this.jumps = 1;
+        if (this.rig.velocity.y < 0.1f && this.rig.velocity.y > -0.1f) {
 
-            if (this.hasDoubleJump) {
-                this.jumps = 2;
+            this.reloadJump -= Time.deltaTime;
+
+            if (this.reloadJump <= 0) {
+                this.jumps = 1;
+
+                if (this.hasDoubleJump) {
+                    this.jumps = 2;
+                }
             }
 
+        } else {
+            this.reloadJump = 0.12f;
         }
         
         float xSpeed = this.realSpeed;

@@ -9,18 +9,16 @@ public class Levers : MonoBehaviour
     private Animator anim;
     private BoxCollider2D colider;
     private EnergySource energy;
+    private AudioSettings audioSettings;
     // Start is called before the first frame update
     void Start()
     {
         this.anim = gameObject.GetComponent<Animator>();
         this.colider = gameObject.GetComponent<BoxCollider2D>();
         this.energy = gameObject.GetComponent<EnergySource>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GameObject gameSettings = GameObject.Find("GameSettings");
+        this.audioSettings = gameSettings.GetComponent<AudioSettings>();
     }
 
     private void OnTriggerEnter2D(Collider2D otherCollider)
@@ -30,6 +28,7 @@ public class Levers : MonoBehaviour
       status = true;
       anim.SetBool("leversAnim", false);
       this.energy.ToggleState();
+      this.audioSettings.PlaySound("Toggle");
     }
 
     else if (otherCollider.gameObject.tag == "Player" && status == true)
@@ -37,6 +36,7 @@ public class Levers : MonoBehaviour
       status = false;
       anim.SetBool("leversAnim", true);
       this.energy.ToggleState();
+      this.audioSettings.PlaySound("Toggle");
     }
     
   }
