@@ -7080,13 +7080,25 @@ MonoBehaviour:
   musicVolume: 2
   sounds:
   - name: Theme
-    clip: {fileID: 8300000, guid: b5f281361a9dbce40bd9467b5870eaaa, type: 3}
+    clip: {fileID: 8300000, guid: 048a47a9f673a2a4fb92c23593b19530, type: 3}
     pitch: 1
     music: 1
     loop: 1
     source: {fileID: 0}
   - name: Scream
     clip: {fileID: 8300000, guid: adbfc574cd4a5be4d9e21bbacd6ec9a5, type: 3}
+    pitch: 1
+    music: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Toggle
+    clip: {fileID: 8300000, guid: 53cfc86b026739e4591c430a4ba6f45c, type: 3}
+    pitch: 1
+    music: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Plate
+    clip: {fileID: 8300000, guid: e57165ccd009ec4438ab55d0e814e4fa, type: 3}
     pitch: 1
     music: 0
     loop: 0
