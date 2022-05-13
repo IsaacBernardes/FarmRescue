@@ -100,12 +100,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8763895366959279770}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2885bdbd2e87b7442967fccefb5929e3, type: 3}
+  m_Script: {fileID: 11500000, guid: 83e4ab04fac89b249a9ea91576ac730e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slideAmount: -1
+  slideAmount: 1
   slideDirection: 1
-  smooth: 4
+  smooth: 2
   loadInverter: 0
   energySource1: {fileID: 0}
   energySource2: {fileID: 0}

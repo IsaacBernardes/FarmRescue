@@ -36,4 +36,8 @@ public class Dialog : MonoBehaviour
     public void PlaySound(string sound) {
         this.audioSettings.PlaySound(sound);
     }
+
+    public void StopAllMusics() {
+        this.audioSettings.StopAllMusics();
+    }
 }

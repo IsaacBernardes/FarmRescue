@@ -7,11 +7,16 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class PlayerExit : MonoBehaviour
 {
+    public int level = 1;
     private BoxCollider2D colider;
     private List<GameObject> players = new List<GameObject>();
+    private LevelSettings levelSettings;
 
     private void Start() {
         this.colider = gameObject.GetComponent<BoxCollider2D>();
+
+        GameObject gameSettings = GameObject.Find("GameSettings");
+        this.levelSettings = gameSettings.GetComponent<LevelSettings>();
     }
 
     private void OnTriggerEnter2D(Collider2D otherCollider)
@@ -22,9 +27,10 @@ public class PlayerExit : MonoBehaviour
 
         if (this.players.Count == 2) {
             while (this.players.Count > 0) {
+                this.levelSettings.CompleteLevel(this.level, 3);
                 GameObject player = this.players[0];
                 Destroy(player);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1, LoadSceneMode.Single);
+                SceneManager.LoadScene("LevelSelector", LoadSceneMode.Single);
             }
         }
 

@@ -311,6 +311,13 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 0
+    functionName: StopAllMusics
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 3.9833333
     functionName: PlaySound
     data: Scream
@@ -328,6 +335,13 @@ AnimationClip:
   - time: 4.016667
     functionName: SetText
     data: '> Sr e Sra Klob: SOCOOOOOOOOORROOOOOOOO!!!'
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 4.5
+    functionName: PlaySound
+    data: Kidnap
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
@@ -370,13 +384,6 @@ AnimationClip:
   - time: 16.016666
     functionName: DisableDialog
     data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 22.416666
-    functionName: PlaySound
-    data: Theme
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
