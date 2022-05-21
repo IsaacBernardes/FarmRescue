@@ -6344,6 +6344,9 @@ MonoBehaviour:
   - name: Breno
     prefab: {fileID: 7321857943223825732, guid: 3a9b8a5e8aaff4844aca31d07810a861, type: 3}
     fruit: {fileID: 7206808601240046866, guid: b0b51f4fbed744e44a654c5a36969506, type: 3}
+  - name: Cleitin
+    prefab: {fileID: 3502910715972816140, guid: 3f6dc98f1c9830a499471fe24da27b37, type: 3}
+    fruit: {fileID: 2788459426986186714, guid: 077f06c215c3faa4a93d9630f71c74ae, type: 3}
   - name: Zezin
     prefab: {fileID: 3878450318930516362, guid: 866ffdca815150e4e86eab116b172668, type: 3}
     fruit: {fileID: 1657611376165336541, guid: 8768ffdeff0caae419d52c587ed61f04, type: 3}
