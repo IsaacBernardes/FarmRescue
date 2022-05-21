@@ -12,13 +12,20 @@ public class PlayerController : MonoBehaviour
     public string rightKey = "d";
     public string jumpKey = "w";
     public bool hasDoubleJump = false;
+    public bool hasDoubleLife = false;
     private float realSpeed = 0f;
     private Rigidbody2D rig;
     private Animator animator;
     private SpriteRenderer sprite;
     private int jumps = 1;
+    private int lifes = 1;
     private float reloadJump = 0.12f;
     private LevelSettings levelSettings;
+    private LevelProgress levelProgress;
+    private bool invulnerable; 
+    private float invulnerableTimeout = 2f;
+    private float opacity = 1f;
+    private bool decreaseOpacity = false;
 
     private void Start() {
         this.rig = gameObject.GetComponent<Rigidbody2D>();
@@ -29,8 +36,15 @@ public class PlayerController : MonoBehaviour
             this.jumps = 2;
         }
 
+        if (this.hasDoubleLife) {
+            this.lifes = 2;
+        }
+
         GameObject gameSettings = GameObject.Find("GameSettings");
         this.levelSettings = gameSettings.GetComponent<LevelSettings>();
+
+        GameObject gameProgress = GameObject.Find("LevelProgress");
+        this.levelProgress = gameProgress.GetComponent<LevelProgress>();
     }
 
     private void Update() {
@@ -74,6 +88,14 @@ public class PlayerController : MonoBehaviour
         this.animator.SetFloat("ySpeed", this.rig.velocity.y);
         this.animator.SetFloat("Speed", System.Math.Abs(this.realSpeed));
 
+
+        this.invulnerableTimeout -= Time.deltaTime;
+
+        if (this.invulnerableTimeout <= 0) {
+            this.invulnerable = false;
+            this.invulnerableTimeout = 2f;
+        }
+
     }
 
     private void FixedUpdate() {
@@ -111,5 +133,48 @@ public class PlayerController : MonoBehaviour
 
 
         this.rig.velocity = new Vector3(xSpeed, this.rig.velocity.y, 0f);
+
+
+
+
+        if (this.invulnerable) {
+
+            if (decreaseOpacity) {
+                this.opacity -= Time.deltaTime * 8;
+                
+                if (this.opacity <= 0) {
+                    this.opacity = 0f;
+                    this.decreaseOpacity = false;
+                }
+
+            } else {
+                this.opacity += Time.deltaTime * 8;
+
+                if (this.opacity >= 1) {
+                    this.opacity = 1f;
+                    this.decreaseOpacity = true;
+                }
+            }
+
+            this.sprite.color = new Color(1f, 1f, 1f, opacity);
+        } else {
+            this.sprite.color = new Color(1f, 1f, 1f, 1f);
+        }
+    }
+
+    public void Die() {
+
+        if (this.invulnerable) {
+            return;
+        }
+
+        this.lifes -= 1;
+
+        if (lifes == 0) {
+            Destroy(gameObject);
+            this.levelProgress.GameOver();
+        } else {
+            this.invulnerable = true;
+        }
     }
 }

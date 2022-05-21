@@ -13,6 +13,15 @@ public class LevelProgress : MonoBehaviour
     [HideInInspector]
     public float timeElipsed = 0f;
     private bool finished = false;
+    private AudioSettings audioSettings;
+
+    private void Start() {
+        GameObject gameSettings = GameObject.Find("GameSettings");
+
+        if (gameSettings != null) {
+            this.audioSettings = gameSettings.GetComponent<AudioSettings>();
+        }
+    }
 
     private void Update() {
         if (!this.finished)
@@ -43,5 +52,10 @@ public class LevelProgress : MonoBehaviour
         }
 
         return stars;
+    }
+
+    public void GameOver() {
+        this.StopCount();
+        this.audioSettings.PlaySound("Game Over");
     }
 }

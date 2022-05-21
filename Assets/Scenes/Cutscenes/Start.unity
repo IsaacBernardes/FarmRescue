@@ -6362,6 +6362,7 @@ MonoBehaviour:
   numberOfLevels: 7
   completedLevels: 0
   levelStars: 
+  paused: 0
 --- !u!114 &591060426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6417,6 +6418,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 621da80c3ddfa7c40a21aaa68f1bb620, type: 3}
     pitch: 1
     music: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Game Over
+    clip: {fileID: 8300000, guid: 018ba08742904b646be7e78a25c21788, type: 3}
+    pitch: 1
+    music: 1
     loop: 0
     source: {fileID: 0}
 --- !u!4 &591060427

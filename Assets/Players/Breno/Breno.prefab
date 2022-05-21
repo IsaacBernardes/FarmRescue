@@ -147,6 +147,7 @@ MonoBehaviour:
   rightKey: d
   jumpKey: w
   hasDoubleJump: 1
+  hasDoubleLife: 0
 --- !u!61 &8589149615220107403
 BoxCollider2D:
   m_ObjectHideFlags: 0

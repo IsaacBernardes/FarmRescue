@@ -54,4 +54,13 @@ public class Gargalinha : MonoBehaviour
         }
         
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        GameObject go = other.gameObject;
+
+        if (go.tag == "Player") {
+            PlayerController playerController = go.GetComponent<PlayerController>();
+            playerController.Die();
+        }
+    }
 }
