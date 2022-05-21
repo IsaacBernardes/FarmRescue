@@ -6,9 +6,11 @@ public class LevelProgress : MonoBehaviour
 {
     public int levelMaxSeconds = 0;
     public int levelMaxFruits = 0;
-    // [HideInInspector]
-    public int fruitsCollected = 0;
-    // [HideInInspector]
+    [HideInInspector]
+    public int p1FruitsCollected = 0;
+    [HideInInspector]
+    public int p2FruitsCollected = 0;
+    [HideInInspector]
     public float timeElipsed = 0f;
     private bool finished = false;
 
@@ -22,7 +24,7 @@ public class LevelProgress : MonoBehaviour
     }
 
     public void ContinueCount() {
-        this.finished = true;
+        this.finished = false;
     }
 
     public int GetLevelScore() {
@@ -36,7 +38,7 @@ public class LevelProgress : MonoBehaviour
             stars = 1;
         }
 
-        if (this.levelMaxFruits > this.fruitsCollected) {
+        if (this.levelMaxFruits > this.p1FruitsCollected + this.p2FruitsCollected) {
             stars -= 1;
         }
 

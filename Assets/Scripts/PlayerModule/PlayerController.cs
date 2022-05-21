@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sprite;
     private int jumps = 1;
     private float reloadJump = 0.12f;
+    private LevelSettings levelSettings;
 
     private void Start() {
         this.rig = gameObject.GetComponent<Rigidbody2D>();
@@ -27,9 +28,23 @@ public class PlayerController : MonoBehaviour
         if (this.hasDoubleJump) {
             this.jumps = 2;
         }
+
+        GameObject gameSettings = GameObject.Find("GameSettings");
+        this.levelSettings = gameSettings.GetComponent<LevelSettings>();
     }
 
     private void Update() {
+
+        if (this.levelSettings.paused) {
+            this.realSpeed = 0;
+            this.rig.velocity = new Vector3(0f, 0f, 0f);
+            this.rig.gravityScale = 0f;
+            this.animator.SetFloat("Speed", 0);
+            this.jumps = 0;
+            return;
+        }
+
+        this.rig.gravityScale = 0.2f;
 
 
         // START MOVIMENT
@@ -62,6 +77,10 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate() {
+
+        if (this.levelSettings.paused) {
+            return;
+        }
 
         if (this.realSpeed < 0) {
             this.sprite.flipX = true;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gargalinha : MonoBehaviour
+public class Slime : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speed;
@@ -11,14 +11,28 @@ public class Gargalinha : MonoBehaviour
     private float time;
     private int rig = 0;
 
+    private LevelSettings levelSettings;
+
+    private void Start() {
+        GameObject gameSettings = GameObject.Find("GameSettings");
+        if (gameSettings != null) {
+            this.levelSettings = gameSettings.GetComponent<LevelSettings>();
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+
+        if (this.levelSettings.paused) {
+            return;
+        }
+
         if(rig == 0){
-            transform.Translate(Vector2.up * speed * Time.deltaTime);
+            transform.Translate(Vector2.right * speed * Time.deltaTime * 0.5f);
         }
         else if(rig == 1){
-            transform.Translate(Vector2.down * speed * Time.deltaTime);
+            transform.Translate(Vector2.left * speed * Time.deltaTime * 0.5f);
         }
         else {
             // da em nada comparça

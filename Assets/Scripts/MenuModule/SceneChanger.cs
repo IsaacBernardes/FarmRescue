@@ -27,4 +27,8 @@ public class SceneChanger : MonoBehaviour
     public void nextScene() {
         SceneManager.LoadScene(this.actualScene.buildIndex+1, LoadSceneMode.Single);
     }
+
+    public void ReloadScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }

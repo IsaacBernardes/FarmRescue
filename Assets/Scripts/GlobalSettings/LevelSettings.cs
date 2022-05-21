@@ -19,10 +19,14 @@ public class LevelSettings : MonoBehaviour
     #endregion
 
     public int numberOfLevels = 6;
+
     [HideInInspector]
     public int completedLevels = 0;
+
     [HideInInspector]
     public List<int> levelStars;
+
+    public bool paused = false;
 
     private void Start() {
         this.levelStars = new List<int>();
