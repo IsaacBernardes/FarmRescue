@@ -154,8 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90020c014f20b68468c0e9c47df16217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundVolume: 51
-  musicVolume: 51
+  soundVolume: 9
+  musicVolume: 9
   sounds:
   - name: Theme
     clip: {fileID: 8300000, guid: b908b1bed7c456147b2426868cc388a0, type: 3}
