@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private float reloadJump = 0.12f;
     private LevelSettings levelSettings;
     private LevelProgress levelProgress;
+    private AudioSettings audioSettings;
     private bool invulnerable; 
     private float invulnerableTimeout = 2f;
     private float opacity = 1f;
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
 
         GameObject gameSettings = GameObject.Find("GameSettings");
         this.levelSettings = gameSettings.GetComponent<LevelSettings>();
+        this.audioSettings = gameSettings.GetComponent<AudioSettings>();
 
         GameObject gameProgress = GameObject.Find("LevelProgress");
         this.levelProgress = gameProgress.GetComponent<LevelProgress>();
@@ -70,6 +72,7 @@ public class PlayerController : MonoBehaviour
             this.realSpeed += this.playerSpeed;
         }
         if (Input.GetKeyDown(this.jumpKey) && this.jumps > 0) {
+            this.audioSettings.PlaySound("Jump");
             this.rig.velocity = new Vector3(this.rig.velocity.x, 0f, 0f);
             this.jumps -= 1;
             this.rig.AddForce(transform.up * 1.5f, ForceMode2D.Impulse);

@@ -211,6 +211,18 @@ MonoBehaviour:
     music: 1
     loop: 0
     source: {fileID: 0}
+  - name: Boss Ambient
+    clip: {fileID: 8300000, guid: 6fbecee3ffb707a42bfa716921aa583c, type: 3}
+    pitch: 1
+    music: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: 189fcbfc7fcd016428a2f913942e950c, type: 3}
+    pitch: 1
+    music: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &1418561208
 Transform:
   m_ObjectHideFlags: 0
