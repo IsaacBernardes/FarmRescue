@@ -41,7 +41,7 @@ public class PlayerExit : MonoBehaviour
                 this.levelSettings.CompleteLevel(this.level, stars);
                 GameObject player = this.players[0];
                 Destroy(player);
-                SceneManager.LoadScene("LevelSelector", LoadSceneMode.Single);
+                this.levelProgress.Win();
             }
         }
 

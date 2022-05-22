@@ -14,6 +14,7 @@ public class LevelProgress : MonoBehaviour
     public float timeElipsed = 0f;
     public GameObject failGUI;
     public GameObject pauseGUI;
+    public GameObject winGUI;
     private bool finished = false;
     private AudioSettings audioSettings;
     private LevelSettings levelSettings;
@@ -63,6 +64,14 @@ public class LevelProgress : MonoBehaviour
         this.levelSettings.paused = true;
         this.audioSettings.PlaySound("Game Over");
         this.failGUI.SetActive(true);
+        this.pauseGUI.SetActive(false);
+    }
+
+    public void Win() {
+        this.StopCount();
+        this.levelSettings.paused = true;
+        this.audioSettings.PlaySound("Yay");
+        this.winGUI.SetActive(true);
         this.pauseGUI.SetActive(false);
     }
 }

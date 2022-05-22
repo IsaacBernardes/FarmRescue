@@ -6430,6 +6430,12 @@ MonoBehaviour:
     music: 1
     loop: 0
     source: {fileID: 0}
+  - name: Yay
+    clip: {fileID: 8300000, guid: 4014e4e8912b6cf4db81ae01ece53e34, type: 3}
+    pitch: 1
+    music: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &591060427
 Transform:
   m_ObjectHideFlags: 0

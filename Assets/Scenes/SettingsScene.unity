@@ -205,6 +205,12 @@ MonoBehaviour:
     music: 1
     loop: 0
     source: {fileID: 0}
+  - name: Yay
+    clip: {fileID: 8300000, guid: 4014e4e8912b6cf4db81ae01ece53e34, type: 3}
+    pitch: 1
+    music: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &1418561208
 Transform:
   m_ObjectHideFlags: 0
@@ -236,6 +242,7 @@ MonoBehaviour:
   completedLevels: 0
   levelStars: 
   paused: 0
+  starsSpended: 0
 --- !u!114 &1418561210
 MonoBehaviour:
   m_ObjectHideFlags: 0
