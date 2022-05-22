@@ -6336,7 +6336,7 @@ MonoBehaviour:
   p1Jump: w
   p1Left: a
   p1Right: d
-  p2Name: Zezin
+  p2Name: Cleitin
   p2Jump: up
   p2Left: left
   p2Right: right
@@ -6366,6 +6366,7 @@ MonoBehaviour:
   completedLevels: 0
   levelStars: 
   paused: 0
+  starsSpended: 0
 --- !u!114 &591060426
 MonoBehaviour:
   m_ObjectHideFlags: 0

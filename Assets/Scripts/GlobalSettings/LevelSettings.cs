@@ -25,8 +25,9 @@ public class LevelSettings : MonoBehaviour
 
     [HideInInspector]
     public List<int> levelStars;
-
     public bool paused = false;
+    [HideInInspector]
+    public int starsSpended = 0;
 
     private void Start() {
         this.levelStars = new List<int>();
