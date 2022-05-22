@@ -10,12 +10,24 @@ public class Blink : MonoBehaviour
 
     private int rig = 0;
     private float time;
-
     public Transform head;
+    private LevelSettings levelSettings;
+
+    private void Start() {
+        GameObject gameSettings = GameObject.Find("GameSettings");
+        if (gameSettings != null) {
+            this.levelSettings = gameSettings.GetComponent<LevelSettings>();
+        }
+    }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (this.levelSettings.paused) {
+            return;
+        }
+
         if(rig == 0){
             transform.Translate(Vector2.right * speed * Time.deltaTime);
         }
@@ -48,6 +60,16 @@ public class Blink : MonoBehaviour
          if(time >= moveTime && rig == 3){
             rig = 0;
             time = 0f;
+        }
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        GameObject go = other.gameObject;
+
+        if (go.tag == "Player") {
+            PlayerController playerController = go.GetComponent<PlayerController>();
+            playerController.Die();
         }
     }
 }

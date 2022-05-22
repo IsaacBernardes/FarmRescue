@@ -11,6 +11,8 @@ public class Fruit : MonoBehaviour
     private Animator animator;
     private AudioSettings audioSettings;
     private LevelProgress levelProgress;
+    [HideInInspector]
+    public int playerNumber;
 
     private void Start() {
         this.animator = gameObject.GetComponent<Animator>();
@@ -35,7 +37,12 @@ public class Fruit : MonoBehaviour
             this.animator.SetTrigger("Collect");
 
             if (this.levelProgress) {
-                this.levelProgress.fruitsCollected += 1;
+                if (this.playerNumber == 1) {
+                    this.levelProgress.p1FruitsCollected += 1;
+                } else {
+                    this.levelProgress.p2FruitsCollected += 1;
+                }
+                
             }
         }
     }

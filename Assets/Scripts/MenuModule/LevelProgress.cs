@@ -6,11 +6,27 @@ public class LevelProgress : MonoBehaviour
 {
     public int levelMaxSeconds = 0;
     public int levelMaxFruits = 0;
-    // [HideInInspector]
-    public int fruitsCollected = 0;
-    // [HideInInspector]
+    [HideInInspector]
+    public int p1FruitsCollected = 0;
+    [HideInInspector]
+    public int p2FruitsCollected = 0;
+    [HideInInspector]
     public float timeElipsed = 0f;
+    public GameObject failGUI;
+    public GameObject pauseGUI;
+    public GameObject winGUI;
     private bool finished = false;
+    private AudioSettings audioSettings;
+    private LevelSettings levelSettings;
+
+    private void Start() {
+        GameObject gameSettings = GameObject.Find("GameSettings");
+
+        if (gameSettings != null) {
+            this.audioSettings = gameSettings.GetComponent<AudioSettings>();
+            this.levelSettings = gameSettings.GetComponent<LevelSettings>();
+        }
+    }
 
     private void Update() {
         if (!this.finished)
@@ -22,7 +38,7 @@ public class LevelProgress : MonoBehaviour
     }
 
     public void ContinueCount() {
-        this.finished = true;
+        this.finished = false;
     }
 
     public int GetLevelScore() {
@@ -36,10 +52,26 @@ public class LevelProgress : MonoBehaviour
             stars = 1;
         }
 
-        if (this.levelMaxFruits > this.fruitsCollected) {
+        if (this.levelMaxFruits > this.p1FruitsCollected + this.p2FruitsCollected) {
             stars -= 1;
         }
 
         return stars;
+    }
+
+    public void GameOver() {
+        this.StopCount();
+        this.levelSettings.paused = true;
+        this.audioSettings.PlaySound("Game Over");
+        this.failGUI.SetActive(true);
+        this.pauseGUI.SetActive(false);
+    }
+
+    public void Win() {
+        this.StopCount();
+        this.levelSettings.paused = true;
+        this.audioSettings.PlaySound("Yay");
+        this.winGUI.SetActive(true);
+        this.pauseGUI.SetActive(false);
     }
 }

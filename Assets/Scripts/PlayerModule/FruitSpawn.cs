@@ -28,6 +28,8 @@ public class FruitSpawn : MonoBehaviour
                 gameObject.transform.position,
                 gameObject.transform.rotation
             );
+            Fruit f = fruit.GetComponent<Fruit>();
+            f.playerNumber = this.player;
         }
 
         Destroy(gameObject);
