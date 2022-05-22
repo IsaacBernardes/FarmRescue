@@ -12,14 +12,18 @@ public class LevelProgress : MonoBehaviour
     public int p2FruitsCollected = 0;
     [HideInInspector]
     public float timeElipsed = 0f;
+    public GameObject failGUI;
+    public GameObject pauseGUI;
     private bool finished = false;
     private AudioSettings audioSettings;
+    private LevelSettings levelSettings;
 
     private void Start() {
         GameObject gameSettings = GameObject.Find("GameSettings");
 
         if (gameSettings != null) {
             this.audioSettings = gameSettings.GetComponent<AudioSettings>();
+            this.levelSettings = gameSettings.GetComponent<LevelSettings>();
         }
     }
 
@@ -56,6 +60,9 @@ public class LevelProgress : MonoBehaviour
 
     public void GameOver() {
         this.StopCount();
+        this.levelSettings.paused = true;
         this.audioSettings.PlaySound("Game Over");
+        this.failGUI.SetActive(true);
+        this.pauseGUI.SetActive(false);
     }
 }

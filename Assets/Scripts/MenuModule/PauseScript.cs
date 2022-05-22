@@ -40,15 +40,19 @@ public class PauseScript : MonoBehaviour
             int timeElipsed =  this.levelProgress.levelMaxSeconds - ((int) this.levelProgress.timeElipsed);
             int minutes = (int) (Mathf.Floor(timeElipsed/60));
             int seconds = timeElipsed - minutes * 60;
-
-            if (timeElipsed <= 0) {
-                seconds = 0;
-                this.timeField.color = Color.red;
-            } else if (this.levelProgress.timeElipsed > this.levelProgress.levelMaxSeconds/2) {
-                this.timeField.color = Color.yellow;
+            
+            if (this.timeField) {
+            
+                if (timeElipsed <= 0) {
+                    seconds = 0;
+                    this.timeField.color = Color.red;
+                } else if (this.levelProgress.timeElipsed > this.levelProgress.levelMaxSeconds/2) {
+                    this.timeField.color = Color.yellow;
+                }
+            
+            
+                this.timeField.text = minutes.ToString("00") + ":" + seconds.ToString("00");
             }
-
-            this.timeField.text = minutes.ToString("00") + ":" + seconds.ToString("00");
 
             minutes = (int) (Mathf.Floor(this.levelProgress.timeElipsed/60));
             seconds = ((int) this.levelProgress.timeElipsed) - minutes * 60;
