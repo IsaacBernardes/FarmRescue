@@ -37,7 +37,7 @@ public class EnergyBall : MonoBehaviour
             GameObject selectedPlayer = this.players[selectedPlayerIndex];
             this.direction = selectedPlayer.transform.position - gameObject.transform.position;
             this.shot = true;
-            this.rig.AddForce(this.direction * 1.3f, ForceMode2D.Impulse);
+            this.rig.AddForce(this.direction * 1.2f, ForceMode2D.Impulse);
         } else {
             Destroy(gameObject);
         }
