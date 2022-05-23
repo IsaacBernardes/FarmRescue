@@ -223,6 +223,18 @@ MonoBehaviour:
     music: 0
     loop: 0
     source: {fileID: 0}
+  - name: Charge
+    clip: {fileID: 8300000, guid: 1c9726a8da33a16438bcbc4d9867dee8, type: 3}
+    pitch: 0.8
+    music: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: EnergyShot
+    clip: {fileID: 8300000, guid: 6f157ea8b984495468ab2937683d583b, type: 3}
+    pitch: 1
+    music: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &1418561208
 Transform:
   m_ObjectHideFlags: 0
