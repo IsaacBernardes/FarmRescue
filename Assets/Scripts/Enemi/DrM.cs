@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DrM : MonoBehaviour
 {
@@ -105,6 +106,7 @@ public class DrM : MonoBehaviour
         
         if (this.life <= 0) {
             Destroy(gameObject);
+            SceneManager.LoadScene("End", LoadSceneMode.Single);
         }
     }
 

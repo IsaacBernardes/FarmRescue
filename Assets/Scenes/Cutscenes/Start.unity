@@ -225,6 +225,180 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 5
   m_TargetDisplay: 0
+--- !u!1 &396544774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 396544778}
+  - component: {fileID: 396544777}
+  - component: {fileID: 396544776}
+  - component: {fileID: 396544775}
+  m_Layer: 0
+  m_Name: GameSettings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &396544775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396544774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54895d4b4cf678a4c80ca0cbd63b12ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p1Name: Breno
+  p1Jump: w
+  p1Left: a
+  p1Right: d
+  p2Name: Cleitin
+  p2Jump: up
+  p2Left: left
+  p2Right: right
+  players:
+  - name: Breno
+    prefab: {fileID: 7321857943223825732, guid: 3a9b8a5e8aaff4844aca31d07810a861, type: 3}
+    fruit: {fileID: 7206808601240046866, guid: b0b51f4fbed744e44a654c5a36969506, type: 3}
+  - name: Cleitin
+    prefab: {fileID: 3502910715972816140, guid: 3f6dc98f1c9830a499471fe24da27b37, type: 3}
+    fruit: {fileID: 2788459426986186714, guid: 077f06c215c3faa4a93d9630f71c74ae, type: 3}
+  - name: Zezin
+    prefab: {fileID: 3878450318930516362, guid: 866ffdca815150e4e86eab116b172668, type: 3}
+    fruit: {fileID: 1657611376165336541, guid: 8768ffdeff0caae419d52c587ed61f04, type: 3}
+--- !u!114 &396544776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396544774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58889dbf388688c41ad2a3a13c7b2a26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfLevels: 7
+  completedLevels: 0
+  levelStars: 
+  paused: 0
+  starsSpended: 0
+--- !u!114 &396544777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396544774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90020c014f20b68468c0e9c47df16217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundVolume: 51
+  musicVolume: 51
+  sounds:
+  - name: Theme
+    clip: {fileID: 8300000, guid: b908b1bed7c456147b2426868cc388a0, type: 3}
+    pitch: 1
+    music: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Scream
+    clip: {fileID: 8300000, guid: adbfc574cd4a5be4d9e21bbacd6ec9a5, type: 3}
+    pitch: 1
+    music: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Toggle
+    clip: {fileID: 8300000, guid: 53cfc86b026739e4591c430a4ba6f45c, type: 3}
+    pitch: 1
+    music: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Plate
+    clip: {fileID: 8300000, guid: e57165ccd009ec4438ab55d0e814e4fa, type: 3}
+    pitch: 1
+    music: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Level
+    clip: {fileID: 8300000, guid: 048a47a9f673a2a4fb92c23593b19530, type: 3}
+    pitch: 1
+    music: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Kidnap
+    clip: {fileID: 8300000, guid: 4dfecf065b336dc44afa20108b3a53c6, type: 3}
+    pitch: 1
+    music: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Pick
+    clip: {fileID: 8300000, guid: 621da80c3ddfa7c40a21aaa68f1bb620, type: 3}
+    pitch: 1
+    music: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Game Over
+    clip: {fileID: 8300000, guid: 018ba08742904b646be7e78a25c21788, type: 3}
+    pitch: 1
+    music: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Yay
+    clip: {fileID: 8300000, guid: 4014e4e8912b6cf4db81ae01ece53e34, type: 3}
+    pitch: 1
+    music: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Boss Ambient
+    clip: {fileID: 8300000, guid: 6fbecee3ffb707a42bfa716921aa583c, type: 3}
+    pitch: 1
+    music: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: 189fcbfc7fcd016428a2f913942e950c, type: 3}
+    pitch: 1
+    music: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Charge
+    clip: {fileID: 8300000, guid: 1c9726a8da33a16438bcbc4d9867dee8, type: 3}
+    pitch: 0.8
+    music: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: EnergyShot
+    clip: {fileID: 8300000, guid: 6f157ea8b984495468ab2937683d583b, type: 3}
+    pitch: 1
+    music: 0
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &396544778
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396544774}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.18834, y: 0.28575122, z: -0.14687365}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &402370685
 GameObject:
   m_ObjectHideFlags: 0
@@ -6301,168 +6475,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &591060423
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 591060427}
-  - component: {fileID: 591060426}
-  - component: {fileID: 591060425}
-  - component: {fileID: 591060424}
-  m_Layer: 0
-  m_Name: GameSettings
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &591060424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 591060423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54895d4b4cf678a4c80ca0cbd63b12ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  p1Name: Breno
-  p1Jump: w
-  p1Left: a
-  p1Right: d
-  p2Name: Cleitin
-  p2Jump: up
-  p2Left: left
-  p2Right: right
-  players:
-  - name: Breno
-    prefab: {fileID: 7321857943223825732, guid: 3a9b8a5e8aaff4844aca31d07810a861, type: 3}
-    fruit: {fileID: 7206808601240046866, guid: b0b51f4fbed744e44a654c5a36969506, type: 3}
-  - name: Cleitin
-    prefab: {fileID: 3502910715972816140, guid: 3f6dc98f1c9830a499471fe24da27b37, type: 3}
-    fruit: {fileID: 2788459426986186714, guid: 077f06c215c3faa4a93d9630f71c74ae, type: 3}
-  - name: Zezin
-    prefab: {fileID: 3878450318930516362, guid: 866ffdca815150e4e86eab116b172668, type: 3}
-    fruit: {fileID: 1657611376165336541, guid: 8768ffdeff0caae419d52c587ed61f04, type: 3}
---- !u!114 &591060425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 591060423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58889dbf388688c41ad2a3a13c7b2a26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numberOfLevels: 7
-  completedLevels: 0
-  levelStars: 
-  paused: 0
-  starsSpended: 0
---- !u!114 &591060426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 591060423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90020c014f20b68468c0e9c47df16217, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundVolume: 100
-  musicVolume: 100
-  sounds:
-  - name: Theme
-    clip: {fileID: 8300000, guid: b908b1bed7c456147b2426868cc388a0, type: 3}
-    pitch: 1
-    music: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: Scream
-    clip: {fileID: 8300000, guid: adbfc574cd4a5be4d9e21bbacd6ec9a5, type: 3}
-    pitch: 1
-    music: 0
-    loop: 0
-    source: {fileID: 0}
-  - name: Toggle
-    clip: {fileID: 8300000, guid: 53cfc86b026739e4591c430a4ba6f45c, type: 3}
-    pitch: 1
-    music: 0
-    loop: 0
-    source: {fileID: 0}
-  - name: Plate
-    clip: {fileID: 8300000, guid: e57165ccd009ec4438ab55d0e814e4fa, type: 3}
-    pitch: 1
-    music: 0
-    loop: 0
-    source: {fileID: 0}
-  - name: Level
-    clip: {fileID: 8300000, guid: 048a47a9f673a2a4fb92c23593b19530, type: 3}
-    pitch: 1
-    music: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Kidnap
-    clip: {fileID: 8300000, guid: 4dfecf065b336dc44afa20108b3a53c6, type: 3}
-    pitch: 1
-    music: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Pick
-    clip: {fileID: 8300000, guid: 621da80c3ddfa7c40a21aaa68f1bb620, type: 3}
-    pitch: 1
-    music: 0
-    loop: 0
-    source: {fileID: 0}
-  - name: Game Over
-    clip: {fileID: 8300000, guid: 018ba08742904b646be7e78a25c21788, type: 3}
-    pitch: 1
-    music: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Yay
-    clip: {fileID: 8300000, guid: 4014e4e8912b6cf4db81ae01ece53e34, type: 3}
-    pitch: 1
-    music: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Boss Ambient
-    clip: {fileID: 8300000, guid: 6fbecee3ffb707a42bfa716921aa583c, type: 3}
-    pitch: 1
-    music: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: Jump
-    clip: {fileID: 8300000, guid: 189fcbfc7fcd016428a2f913942e950c, type: 3}
-    pitch: 1
-    music: 0
-    loop: 0
-    source: {fileID: 0}
---- !u!4 &591060427
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 591060423}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.18834, y: 0.28575122, z: -0.14687365}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &699074079
 GameObject:
   m_ObjectHideFlags: 0

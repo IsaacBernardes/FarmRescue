@@ -48,7 +48,14 @@ public class LevelGUIManagement : MonoBehaviour
             return;
         }
 
-        string levelName = "Level " + this.level;
+        string levelName = "";
+
+        if (this.level == 7) {
+            levelName = "Level Boss";
+        } else {
+            levelName = "Level " + this.level;
+        }
+
         SceneManager.LoadScene(levelName, LoadSceneMode.Single);
     }
 
