@@ -14,7 +14,7 @@ public class DrM : MonoBehaviour
     public TextMeshProUGUI textFieldBossLifes;
     public Vector3[] positions;
     private EnergyBall energyBall;
-    private int life = 1;
+    private int life = 10;
     private AudioSettings audioSettings;
     private LevelSettings levelSettings;
     private LevelProgress levelProgress;
