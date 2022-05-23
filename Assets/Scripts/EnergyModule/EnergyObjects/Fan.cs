@@ -50,6 +50,7 @@ public class Fan : MonoBehaviour
                 else{
                     xForce = this.force;
                     yForce = item.velocity.y;
+                    item.AddForce(new Vector3(this.force, 0f, 0f));
                 }
                 item.velocity = new Vector3(xForce, yForce, 0f);
             }
