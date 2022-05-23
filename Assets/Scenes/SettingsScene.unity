@@ -154,8 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90020c014f20b68468c0e9c47df16217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundVolume: 51
-  musicVolume: 51
+  soundVolume: 9
+  musicVolume: 9
   sounds:
   - name: Theme
     clip: {fileID: 8300000, guid: b908b1bed7c456147b2426868cc388a0, type: 3}
@@ -219,6 +219,18 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Jump
     clip: {fileID: 8300000, guid: 189fcbfc7fcd016428a2f913942e950c, type: 3}
+    pitch: 1
+    music: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Charge
+    clip: {fileID: 8300000, guid: 1c9726a8da33a16438bcbc4d9867dee8, type: 3}
+    pitch: 0.8
+    music: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: EnergyShot
+    clip: {fileID: 8300000, guid: 6f157ea8b984495468ab2937683d583b, type: 3}
     pitch: 1
     music: 0
     loop: 0

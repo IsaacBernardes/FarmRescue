@@ -17,4 +17,8 @@ public class EnergySource : MonoBehaviour
     public void ToggleState() {
         this.state = !this.state;
     }
+
+    public void DestroyYourself() {
+        Destroy(gameObject);
+    }
 }
